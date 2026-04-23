@@ -165,8 +165,8 @@ export default function Work() {
           className="absolute top-0 left-0 h-full pointer-events-none" 
           style={{ 
             width: '200%',
-            background: 'linear-gradient(90deg, rgba(201,168,124,0) 0%, rgba(201,168,124,0.08) 25%, rgba(201,168,124,0) 50%, rgba(201,168,124,0.08) 75%, rgba(201,168,124,0) 100%)',
-            animation: 'goldSweep 20s linear infinite',
+            background: 'linear-gradient(90deg, rgba(201,168,124,0) 0%, rgba(201,168,124,0.2) 25%, rgba(201,168,124,0) 50%, rgba(201,168,124,0.2) 75%, rgba(201,168,124,0) 100%)',
+            animation: 'goldSweep 15s linear infinite',
             willChange: 'transform'
           }}
         />

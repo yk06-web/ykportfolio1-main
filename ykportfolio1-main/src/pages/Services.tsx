@@ -48,33 +48,38 @@ const mainServices = [
 const automations = [
   {
     name: "Confirmation Emails",
-    price: "$300 to $500",
+    price: "$100–$200",
     body: "Every inquiry instantly triggers a professional confirmation so leads never feel ignored.",
   },
   {
     name: "Automated Follow-ups",
-    price: "$400 to $700",
+    price: "$150–$350",
     body: "Timed sequences that follow up with leads who have not responded so potential customers do not fall through the cracks.",
   },
   {
-    name: "24/7 Customer Support Chat Agent",
-    price: "$600 to $1,200",
-    body: "An AI-powered chat agent on your website that answers questions, qualifies leads, and captures contact info around the clock.",
-  },
-  {
-    name: "Appointment Setting Agent",
-    price: "$500 to $1,000",
+    name: "Full Appointment System",
+    price: "$250–$400",
     body: "An intelligent agent that handles scheduling conversations and books appointments without you being involved.",
   },
   {
-    name: "Monthly Maintenance and Hosting",
-    price: "$65 to $100 per month",
+    name: "24/7 Chat Agent",
+    price: "$400–$800",
+    body: "An AI-powered chat agent on your website that answers questions, qualifies leads, and captures contact info around the clock.",
+  },
+  {
+    name: "Website Maintenance + Hosting",
+    price: "$50–$80/month",
     body: "Your site stays fast, secure, and up to date. Small edits included.",
   },
   {
     name: "Automation Monitoring",
-    price: "$80 to $120 per month",
+    price: "$60–$90/month",
     body: "Your automations stay running, tested, and updated. If something breaks it gets fixed before you notice.",
+  },
+  {
+    name: "Website + Automation Bundle",
+    price: "$100–$150/month",
+    body: "Complete maintenance and monitoring for both your website and your automation systems.",
   },
 ];
 
@@ -187,7 +192,7 @@ export default function Services() {
             ))}
           </div>
 
-          <p className="mt-12 text-center text-xs" style={{ color: "#D9BB9E" }}>
+          <p className="mt-12 text-center text-xs text-black">
             All prices in CAD. Final pricing is based on your specific project and confirmed before
             anything begins.
           </p>
