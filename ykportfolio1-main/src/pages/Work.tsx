@@ -11,6 +11,8 @@ type Project = {
   description: string;
   image: string;
   comingSoon?: boolean;
+  objectFit?: "cover" | "contain";
+  link?: string;
 };
 
 const projects: Project[] = [
@@ -19,18 +21,20 @@ const projects: Project[] = [
     niche: "Healthcare",
     name: "Modern Psychology Practice",
     description:
-      "Built around one goal, filling a therapist's calendar. Includes a structured booking flow, automated session reminders, and a calm design that builds trust before the first appointment.",
+      "Built around one goal: filling a therapist’s calendar. Includes a structured booking flow, automated email follow-ups after the free roadmap, session reminders, and a calm design that builds trust before the first appointment.",
     image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80&auto=format&fit=crop",
+      "/therapist.jpg",
+    link: "https://session-harmony-pro.vercel.app/",
   },
   {
     label: "Concept Demo",
     niche: "Healthcare",
     name: "Luxury Dental Clinic",
     description:
-      "A high-end multi-page dental site designed to attract cosmetic patients. Dark luxury aesthetic with a full service breakdown, results gallery, and consultation booking system.",
+      "A high-end dental experience designed to showcase results, build trust, and turn visitors into booked consultations.",
     image:
-      "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1200&q=80&auto=format&fit=crop",
+      "/dentist.jpg",
+    link: "https://bespoke-smile.vercel.app/",
   },
   {
     label: "Concept Demo, Coming Soon",
@@ -95,7 +99,7 @@ export default function Work() {
                     src={p.image}
                     alt={p.name}
                     loading="lazy"
-                    className="h-full w-full object-cover"
+                    className={`h-full w-full ${p.objectFit === "contain" ? "object-contain object-center" : "object-cover"}`}
                   />
                   {p.comingSoon && (
                     <div
@@ -133,7 +137,9 @@ export default function Work() {
                   </span>
                 ) : (
                   <a
-                    href="#"
+                    href={p.link || "#"}
+                    target={p.link ? "_blank" : undefined}
+                    rel={p.link ? "noopener noreferrer" : undefined}
                     className="mt-5 inline-flex w-fit items-center gap-1 text-sm font-medium underline-offset-4 hover:underline"
                     style={{ color: "#C9A87C" }}
                   >
@@ -147,9 +153,25 @@ export default function Work() {
       </section>
 
       {/* Dark banner */}
-      <section style={{ backgroundColor: "#111111" }}>
-        <div className="mx-auto max-w-5xl px-6 py-20 text-center sm:py-24">
-          <h2 className="font-serif text-3xl font-medium tracking-tight text-white sm:text-4xl md:text-5xl">
+      <section className="relative overflow-hidden" style={{ backgroundColor: "#111111" }}>
+        {/* Full-width sweeping gold gradient */}
+        <style>{`
+          @keyframes goldSweep {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+          }
+        `}</style>
+        <div 
+          className="absolute top-0 left-0 h-full pointer-events-none" 
+          style={{ 
+            width: '200%',
+            background: 'linear-gradient(90deg, rgba(201,168,124,0) 0%, rgba(201,168,124,0.08) 25%, rgba(201,168,124,0) 50%, rgba(201,168,124,0.08) 75%, rgba(201,168,124,0) 100%)',
+            animation: 'goldSweep 20s linear infinite',
+            willChange: 'transform'
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-3xl px-6 py-28 text-center sm:py-36">
+          <h2 className="font-serif text-3xl font-medium tracking-tight text-white sm:text-4xl md:text-5xl leading-tight">
             Every project is built around one goal, getting your business results.
           </h2>
         </div>
@@ -157,22 +179,24 @@ export default function Work() {
 
       {/* CTA */}
       <section className="bg-background">
-        <div className="mx-auto max-w-4xl px-6 py-20 text-center sm:py-24">
-          <h2 className="font-serif text-3xl font-medium tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Something catching your eye? <span style={{ color: "#C9A87C" }}>Let's build it.</span>
-          </h2>
-          <div className="mt-8">
-            <a
-              href={TALLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-md px-7 text-sm font-medium transition-colors"
-              style={{ backgroundColor: "#C9A87C", color: "#111111" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B89669")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C9A87C")}
-            >
-              Start a Project
-            </a>
+        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+          <div className="flex flex-col items-start md:flex-row md:items-center justify-between text-left gap-8">
+            <h2 className="max-w-2xl font-serif text-2xl font-medium tracking-tight text-foreground sm:text-3xl md:text-4xl leading-[1.2] sm:leading-[1.15]">
+              Something catching your eye? <span style={{ color: "#C9A87C" }}>Let's build it.</span>
+            </h2>
+            <div className="shrink-0">
+              <a
+                href={TALLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 items-center justify-center rounded-md px-7 text-sm font-medium transition-colors"
+                style={{ backgroundColor: "#C9A87C", color: "#111111" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B89669")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C9A87C")}
+              >
+                Start a Project
+              </a>
+            </div>
           </div>
         </div>
       </section>

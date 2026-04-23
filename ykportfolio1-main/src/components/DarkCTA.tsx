@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const TALLY_URL = "https://tally.so/placeholder";
 
@@ -8,47 +8,76 @@ export function DarkCTA({
   heading?: string;
 }) {
   return (
-    <section className="bg-white py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="bg-[#FAF9F6] py-16 sm:py-24">
+      <div className="mx-auto w-[92%] sm:w-[88%] lg:w-[85%] max-w-[1600px]">
         <div 
-          className="rounded-[2rem] px-8 py-16 sm:p-20 text-left shadow-2xl"
+          className="relative overflow-hidden rounded-[2.5rem] px-6 py-16 sm:px-16 sm:pt-24 sm:pb-12 text-center shadow-2xl flex flex-col items-center min-h-[500px]"
           style={{ backgroundColor: "#111111" }}
         >
-          <h2 className="max-w-3xl font-serif text-3xl font-medium tracking-tight text-white sm:text-4xl md:text-5xl">
-            {heading}
-          </h2>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
-            Tell me a bit about what you’re looking to build. It takes about 2 minutes, and I’ll review your answers and get back to you with the next steps.
-          </p>
-          
-          <ul className="mt-8 space-y-4">
-            <li className="flex items-center gap-3 text-white/90">
-              <Check className="h-5 w-5 shrink-0" style={{ color: "#C9A87C" }} />
-              <span className="text-base font-medium">Quick and straightforward</span>
-            </li>
-            <li className="flex items-center gap-3 text-white/90">
-              <Check className="h-5 w-5 shrink-0" style={{ color: "#C9A87C" }} />
-              <span className="text-base font-medium">Tailored to your needs</span>
-            </li>
-            <li className="flex items-center gap-3 text-white/90">
-              <Check className="h-5 w-5 shrink-0" style={{ color: "#C9A87C" }} />
-              <span className="text-base font-medium">Clear next steps after submission</span>
-            </li>
-          </ul>
+          {/* Subtle Background Texture (Dotted pattern) */}
+          <div 
+            className="absolute inset-0 opacity-[0.15]" 
+            style={{ 
+              backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)', 
+              backgroundSize: '36px 36px',
+              backgroundPosition: '0 0'
+            }}
+          />
+          {/* Top Gradient for subtle lighting */}
+          <div 
+            className="absolute -top-[300px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-10 blur-[120px] pointer-events-none"
+            style={{ backgroundColor: "#C9A87C" }}
+          />
 
-          <div className="mt-12">
-            <a
-              href={TALLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-md px-8 text-sm font-semibold tracking-wide transition-colors"
-              style={{ backgroundColor: "#C9A87C", color: "#111111" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B89669")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C9A87C")}
-            >
-              Start a Project
-            </a>
+          {/* Main CTA Content */}
+          <div className="relative z-10 flex flex-col items-center justify-center flex-1 w-full max-w-3xl mx-auto mb-20">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase rounded-full px-4 py-1.5 border mb-6" style={{ color: "#C9A87C", borderColor: "rgba(201, 168, 124, 0.3)" }}>
+              Start Your Project
+            </span>
+            <h2 className="font-serif text-4xl font-medium tracking-tight text-white sm:text-5xl md:text-6xl text-center">
+              {heading}
+            </h2>
+            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/70 max-w-2xl text-center font-light">
+              Tell me a bit about what you’re looking to build. It takes about 2 minutes, and I’ll review your answers and get back to you with the next steps.
+            </p>
+            
+            <div className="mt-10">
+              <a
+                href={TALLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-14 items-center justify-center rounded-full px-10 text-base font-semibold tracking-wide transition-all hover:scale-105 shadow-lg"
+                style={{ backgroundColor: "#C9A87C", color: "#111111" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B89669")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C9A87C")}
+              >
+                Start a Project
+              </a>
+            </div>
           </div>
+
+          {/* Footer inside the Dark Container */}
+          <div className="relative z-10 w-full mt-auto pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <span className="text-xl font-serif font-medium text-white tracking-wide">YK Digital<span style={{ color: "#C9A87C" }}>s</span></span>
+              <span className="text-sm text-white/50 mt-1">Websites and Automation for Small Businesses.</span>
+            </div>
+            <div className="flex items-center gap-8">
+              <Link to="/about" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+                About
+              </Link>
+              <Link to="/contact" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+        
+        {/* Bottom Copyright Text (Outside container) */}
+        <div className="w-full mt-6 px-4">
+          <p className="text-xs text-[#555555] font-medium text-center md:text-left">
+            © YK Digital<span style={{ color: "#C9A87C" }}>s</span> 2026. All rights reserved.
+          </p>
         </div>
       </div>
     </section>
