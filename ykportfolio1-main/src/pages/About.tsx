@@ -10,7 +10,7 @@ export default function About() {
       "Yazeed K builds websites and automation systems for small businesses. Simple scope, honest work, full attention on every project.",
     ogTitle: "About — YK Digitals",
     ogDescription: "Yazeed K builds websites and automation systems for small businesses.",
-    ogImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+    ogImage: "https://ykdigitals.com/og-image.png",
   });
 
   return (
