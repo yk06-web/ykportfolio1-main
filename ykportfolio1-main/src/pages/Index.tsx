@@ -19,10 +19,10 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 15 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }
   },
 };
 
@@ -65,7 +65,7 @@ export default function Index() {
 
       {/* SECTION 2 — PROBLEM */}
       <section style={{ background: "linear-gradient(to bottom, #FAF9F6, #FFFFFF)" }}>
-        <motion.div 
+        <motion.div
           className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-20 sm:py-28 md:grid-cols-2 md:gap-16"
           variants={containerVariants}
           initial="hidden"

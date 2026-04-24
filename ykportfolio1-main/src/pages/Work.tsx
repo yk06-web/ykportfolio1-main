@@ -70,9 +70,12 @@ export default function Work() {
   return (
     <SiteLayout>
       {/* Page header */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-          <h1 className="max-w-4xl font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl">
+      <section className="relative overflow-hidden border-b border-border">
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 sm:py-28">
+          <h1 
+            className="max-w-4xl font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl"
+            style={{ textShadow: "0px 4px 12px rgba(0,0,0,0.05)" }}
+          >
             Websites and systems built for clarity and conversion.
           </h1>
           <p className="mt-6 max-w-2xl text-base text-muted-foreground">
