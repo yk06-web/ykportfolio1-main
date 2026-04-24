@@ -26,7 +26,7 @@ const mainServices = [
       "Visual redesign of all key pages",
       "Conversion focused layouts",
       "Migration and launch",
-      "13-day post-launch support",
+      "10-day post-launch support",
     ],
     featured: true,
   },
@@ -36,11 +36,10 @@ const mainServices = [
     body: "A complete package. A site that brings people in and a system that follows up, confirms, and nurtures them automatically.",
     items: [
       "Everything in Website Build",
-      "Lead capture and routing",
-      "Instant automated responses",
-      "Multi-step follow-ups",
-      "CRM or calendar integration",
-      "Optional monthly maintenance",
+      "Your choice of automation",
+      "Setup and testing of all automations",
+      "10-day post-launch support",
+      "First month of maintenance and monitoring included",
     ],
   },
 ];
@@ -112,15 +111,16 @@ export default function Services() {
       <section>
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
           <div className="grid gap-6 md:grid-cols-3">
-            {mainServices.map((s) => (
+            {mainServices.map((s, index) => (
               <div
                 key={s.name}
                 className="flex flex-col rounded-lg border bg-card p-8"
-                style={
-                  s.featured
+                style={{
+                  ...(s.featured
                     ? { borderColor: "#C9A87C", borderWidth: 1 }
-                    : { borderColor: "#E5E5E5" }
-                }
+                    : { borderColor: "#E5E5E5" }),
+                  ...(index === 2 ? { backgroundColor: "#FFFFFF" } : {})
+                }}
               >
                 <h2 className="font-serif text-2xl text-foreground">{s.name}</h2>
                 <p className="mt-2 text-base font-medium" style={{ color: "#C9A87C" }}>
@@ -155,6 +155,10 @@ export default function Services() {
               </div>
             ))}
           </div>
+
+          <p className="mt-12 mx-auto max-w-4xl text-center text-sm leading-relaxed text-muted-foreground">
+            <span style={{ color: "#C9A87C" }}>Note:</span> Your site does not stop being our responsibility on launch day. Every project includes a care plan covering hosting, maintenance, and monitoring, starting at $50/month for websites and $100/month for websites with automations. With a 3 month minimum, we have enough time together to make sure everything is truly working for your business and your customers.
+          </p>
         </div>
       </section>
 
@@ -193,45 +197,57 @@ export default function Services() {
           </div>
 
           <p className="mt-12 text-center text-xs text-black">
-            All prices in CAD. Final pricing is based on your specific project and confirmed before
-            anything begins.
+            *All prices in CAD. Final pricing is based on your specific project and confirmed before
+            anything begins.*
           </p>
         </div>
       </section>
 
       {/* Process */}
-      <section style={{ backgroundColor: "#FAF7F3" }} className="border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-          <h2 className="font-serif text-3xl font-medium tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            How we work together.
-          </h2>
+      <section style={{ backgroundColor: "#FAF7F3" }} className="border-t border-border py-20 sm:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="relative rounded-2xl p-10 sm:p-16 shadow-sm bg-white">
+            {/* SVG border for custom refined dashes */}
+            <div 
+              className="pointer-events-none absolute inset-0 rounded-2xl"
+              style={{
+                backgroundImage: "url(\"data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23C9A87C' stroke-width='2' stroke-dasharray='10%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e\")"
+              }}
+            />
+            
+            <div className="relative z-10">
+              <h2 className="font-serif text-3xl font-medium tracking-tight text-foreground sm:text-4xl md:text-5xl">
+                How we work together.
+              </h2>
 
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
-            {[
-              {
-                n: "01",
-                t: "Understand",
-                d: "You share what your business does, who it is for, and what you want it to achieve. A short form handles everything, no back and forth needed.",
-              },
-              {
-                n: "02",
-                t: "Build",
-                d: "I design and build the site and automation systems you need, then handle everything technical so you do not have to think about it.",
-              },
-              {
-                n: "03",
-                t: "Launch and Optimize",
-                d: "We launch, measure what is working, and refine based on real data, not assumptions.",
-              },
-            ].map((step) => (
-              <div key={step.n}>
-                <p className="text-sm font-medium tracking-widest" style={{ color: "#C9A87C" }}>
-                  {step.n}
-                </p>
-                <h3 className="mt-3 font-serif text-2xl text-foreground">{step.t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.d}</p>
+              <div className="mt-12 grid gap-10 md:grid-cols-3">
+                {[
+                  {
+                    n: "01",
+                    t: "Understand",
+                    d: "You share what your business does, who it is for, and what you want it to achieve. A short form handles everything, no back and forth needed.",
+                  },
+                  {
+                    n: "02",
+                    t: "Build",
+                    d: "I design and build the site and automation systems you need, then handle everything technical so you do not have to think about it.",
+                  },
+                  {
+                    n: "03",
+                    t: "Launch and Optimize",
+                    d: "We launch, measure what is working, and refine based on real data, not assumptions.",
+                  },
+                ].map((step) => (
+                  <div key={step.n}>
+                    <p className="text-sm font-medium tracking-widest" style={{ color: "#C9A87C" }}>
+                      {step.n}
+                    </p>
+                    <h3 className="mt-3 font-serif text-2xl text-foreground">{step.t}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.d}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

@@ -33,7 +33,7 @@ const projects: Project[] = [
     description:
       "A high-end dental experience designed to showcase results, build trust, and turn visitors into booked consultations.",
     image:
-      "/dentist.jpg",
+      "/dentist-cropped.jpg",
     link: "https://bespoke-smile.vercel.app/",
   },
   {
@@ -71,13 +71,20 @@ export default function Work() {
     <SiteLayout>
       {/* Page header */}
       <section className="relative overflow-hidden border-b border-border">
-        <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 sm:py-28">
-          <h1 
-            className="max-w-4xl font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl"
-            style={{ textShadow: "0px 4px 12px rgba(0,0,0,0.05)" }}
-          >
-            Websites and systems built for clarity and conversion.
-          </h1>
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 sm:py-20">
+          <div className="relative max-w-4xl">
+            <h1 
+              className="relative font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl flex flex-col"
+              style={{ textShadow: "0px 4px 20px rgba(0, 0, 0, 0.35)" }}
+            >
+              <span className="relative z-10">Websites and systems built for</span>
+              <span className="relative z-0">
+                <span className="absolute top-0 left-0 w-full max-w-lg h-px bg-foreground/5" />
+                <span className="absolute top-px left-0 w-full max-w-lg h-6 bg-gradient-to-b from-foreground/[0.03] to-transparent pointer-events-none" />
+                clarity and conversion.
+              </span>
+            </h1>
+          </div>
           <p className="mt-6 max-w-2xl text-base text-muted-foreground">
             A mix of concept demos and real client work. Each project is labeled honestly so you
             know what you are looking at.
