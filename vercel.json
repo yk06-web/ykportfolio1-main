@@ -1,5 +1,4 @@
 {
   "buildCommand": "cd ykportfolio1-main && npm install && npm run build",
-  "outputDirectory": "ykportfolio1-main/dist",
-  "framework": "vite"
+  "outputDirectory": "ykportfolio1-main/dist"
 }
