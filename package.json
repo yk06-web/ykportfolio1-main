@@ -4,5 +4,8 @@
   "private": true,
   "scripts": {
     "build": "cd ykportfolio1-main && npm install && npm run build"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
   }
 }
