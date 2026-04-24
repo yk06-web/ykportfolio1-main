@@ -204,9 +204,9 @@ export default function Services() {
       </section>
 
       {/* Process */}
-      <section style={{ backgroundColor: "#FAF7F3" }} className="border-t border-border py-20 sm:py-24">
+      <section style={{ backgroundColor: "#FFFFFF" }} className="border-t border-border py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="relative rounded-2xl p-10 sm:p-16 shadow-sm bg-white">
+          <div className="relative rounded-2xl p-10 sm:p-16 shadow-sm" style={{ backgroundColor: "#FDFCF9" }}>
             {/* SVG border for custom refined dashes */}
             <div 
               className="pointer-events-none absolute inset-0 rounded-2xl"

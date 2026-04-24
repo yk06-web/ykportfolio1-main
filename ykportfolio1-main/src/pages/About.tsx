@@ -51,12 +51,10 @@ export default function About() {
             >
               <div className="space-y-16 text-lg text-foreground" style={{ lineHeight: 1.95 }}>
                 
-                <div className="space-y-6">
+                <div className="space-y-8 max-w-2xl" style={{ lineHeight: 2.1 }}>
+                  <p>Hey, I am Yazeed.</p>
                   <p>
-                    I build websites and automation systems for small businesses that need their online presence to actually do something — not just sit there.
-                  </p>
-                  <p>
-                    You tell me what you need. I build it properly. It works.
+                    I build websites and automation systems for small businesses that are tired of their online presence not doing enough. You tell me what you need, I handle everything, and you walk away with something that actually works.
                   </p>
                 </div>
 
@@ -67,11 +65,11 @@ export default function About() {
                   <ul className="space-y-6 list-none pl-6 md:pl-8">
                     <li className="flex items-start gap-5 transition-opacity duration-300 hover:opacity-70">
                       <span className="font-bold" style={{ color: "#C9A87C" }}>&mdash;</span>
-                      <span>Clear scope from the start</span>
+                      <span>Clear, direct communication</span>
                     </li>
                     <li className="flex items-start gap-5 transition-opacity duration-300 hover:opacity-70">
                       <span className="font-bold" style={{ color: "#C9A87C" }}>&mdash;</span>
-                      <span>Built around your actual business, not templates</span>
+                      <span>Built around your actual business</span>
                     </li>
                     <li className="flex items-start gap-5 transition-opacity duration-300 hover:opacity-70">
                       <span className="font-bold" style={{ color: "#C9A87C" }}>&mdash;</span>
@@ -79,25 +77,33 @@ export default function About() {
                     </li>
                     <li className="flex items-start gap-5 transition-opacity duration-300 hover:opacity-70">
                       <span className="font-bold" style={{ color: "#C9A87C" }}>&mdash;</span>
-                      <span>No outsourcing, no handoffs</span>
-                    </li>
-                    <li className="flex items-start gap-5 transition-opacity duration-300 hover:opacity-70">
-                      <span className="font-bold" style={{ color: "#C9A87C" }}>&mdash;</span>
-                      <span>Everything built to convert, not just look good</span>
+                      <span>We keep things simple and easy</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="h-px w-full bg-foreground/10" />
 
-                <div className="space-y-6">
-                  <h2 className="mb-12 font-serif text-4xl sm:text-5xl font-medium tracking-tight text-foreground">Who this is for</h2>
-                  <p>
-                    Small businesses that are tired of unclear websites, slow follow-up, or losing potential clients.
-                  </p>
-                  <p>
-                    I work with a small number of clients at a time so every project gets proper attention.
-                  </p>
+                <div>
+                  <h2 className="mb-12 font-serif text-4xl sm:text-5xl font-medium tracking-tight text-foreground">If this sounds familiar</h2>
+                  <ul className="space-y-6 list-none pl-6 md:pl-8">
+                    <li className="flex items-start gap-5 transition-opacity duration-300 hover:opacity-70">
+                      <span className="font-bold" style={{ color: "#C9A87C" }}>&mdash;</span>
+                      <span>Your website isn’t bringing in enough inquiries</span>
+                    </li>
+                    <li className="flex items-start gap-5 transition-opacity duration-300 hover:opacity-70">
+                      <span className="font-bold" style={{ color: "#C9A87C" }}>&mdash;</span>
+                      <span>You’re not sure what happens after someone reaches out</span>
+                    </li>
+                    <li className="flex items-start gap-5 transition-opacity duration-300 hover:opacity-70">
+                      <span className="font-bold" style={{ color: "#C9A87C" }}>&mdash;</span>
+                      <span>Things feel a bit all over the place</span>
+                    </li>
+                    <li className="flex items-start gap-5 transition-opacity duration-300 hover:opacity-70">
+                      <span className="font-bold" style={{ color: "#C9A87C" }}>&mdash;</span>
+                      <span>You know it could be working better</span>
+                    </li>
+                  </ul>
                 </div>
 
                 <div className="h-px w-full bg-foreground/10" />

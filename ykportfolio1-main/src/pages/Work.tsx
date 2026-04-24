@@ -74,14 +74,18 @@ export default function Work() {
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 sm:py-20">
           <div className="relative max-w-4xl">
             <h1 
-              className="relative font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl flex flex-col"
+              className="relative font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl flex flex-col items-start"
               style={{ textShadow: "0px 4px 20px rgba(0, 0, 0, 0.35)" }}
             >
-              <span className="relative z-10">Websites and systems built for</span>
-              <span className="relative z-0">
-                <span className="absolute top-0 left-0 w-full max-w-lg h-px bg-foreground/5" />
-                <span className="absolute top-px left-0 w-full max-w-lg h-6 bg-gradient-to-b from-foreground/[0.03] to-transparent pointer-events-none" />
-                clarity and conversion.
+              <span className="relative z-0 inline-block w-fit">
+                <span className="absolute top-0 left-0 w-full h-px bg-foreground/10" />
+                <span className="absolute top-px left-0 w-full h-full bg-gradient-to-b from-foreground/[0.06] to-transparent pointer-events-none" />
+                <span className="relative z-10">Websites and systems built for</span>
+              </span>
+              <span className="relative z-0 inline-block w-fit">
+                <span className="absolute top-0 left-0 w-full h-px bg-foreground/10" />
+                <span className="absolute top-px left-0 w-full h-full bg-gradient-to-b from-foreground/[0.06] to-transparent pointer-events-none" />
+                <span className="relative z-10">clarity and conversion.</span>
               </span>
             </h1>
           </div>

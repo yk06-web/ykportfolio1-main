@@ -1,7 +1,6 @@
 import { SiteLayout } from "@/components/SiteLayout";
+import { DarkCTA } from "@/components/DarkCTA";
 import { useDocumentHead } from "@/hooks/use-document-head";
-
-const TALLY_URL = "https://tally.so/placeholder";
 
 export default function Contact() {
   useDocumentHead({
@@ -14,42 +13,34 @@ export default function Contact() {
 
   return (
     <SiteLayout>
-      <section className="bg-background">
-        <div className="mx-auto flex max-w-3xl flex-col items-center justify-center px-6 py-32 text-center sm:py-40">
-          <h1 className="font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Let's build something <span style={{ color: "#C9A87C" }}>worth having.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-base" style={{ color: "#555555" }}>
-            Describe your project and I will come back with a clear plan and honest price, usually
-            within one business day.
+      <DarkCTA 
+        heading="Let's build something that actually works."
+        subtext="Tell me what you’re trying to do. It takes about 2 minutes, and I’ll come back with a clear plan and a straight answer, quickly."
+      >
+        <div className="flex flex-col items-center">
+          <p className="text-sm text-white/90">
+            Just a clear starting point.
           </p>
 
-          <div className="mt-10">
-            <a
-              href={TALLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-md px-8 text-sm font-medium transition-colors"
-              style={{ backgroundColor: "#C9A87C", color: "#111111" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B89669")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C9A87C")}
-            >
-              Start a Project
-            </a>
+          <div className="mt-7 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/80">
+            <span>No pressure</span>
+            <span className="text-[#C9A87C] opacity-90">&bull;</span>
+            <span>Clear pricing</span>
+            <span className="text-[#C9A87C] opacity-90">&bull;</span>
+            <span>Quick turnaround</span>
           </div>
 
-          <p className="mt-6 text-sm" style={{ color: "#888888" }}>
+          <p className="mt-12 text-sm text-white/80 font-medium">
             Prefer email?{" "}
             <a
               href="mailto:hello@ykdigitals.ca"
-              className="underline-offset-4 hover:underline"
-              style={{ color: "#888888" }}
+              className="text-white underline-offset-4 hover:underline"
             >
               hello@ykdigitals.ca
             </a>
           </p>
         </div>
-      </section>
+      </DarkCTA>
     </SiteLayout>
   );
 }
