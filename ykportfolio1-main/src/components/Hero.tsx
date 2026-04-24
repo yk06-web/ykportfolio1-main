@@ -1,14 +1,9 @@
 import { ParticleNetwork } from "./ParticleNetwork";
+import { Link } from "react-router-dom";
 
-const TALLY_URL = "https://tally.so/placeholder";
+const TALLY_URL = "https://tally.so/r/q4E799";
 
 export function Hero() {
-  function scrollToServices(e: React.MouseEvent<HTMLAnchorElement>) {
-    e.preventDefault();
-    const el = document.getElementById("services-snapshot");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
   return (
     <section
       className="relative isolate overflow-hidden"
@@ -55,13 +50,13 @@ export function Hero() {
           >
             Start a Project
           </a>
-          <a
-            href="#services-snapshot"
-            onClick={scrollToServices}
+          <Link
+            to="/work"
+            onClick={() => window.scrollTo(0, 0)}
             className="text-sm font-medium tracking-wide text-white underline-offset-4 hover:underline"
           >
             See What's Possible
-          </a>
+          </Link>
         </div>
       </div>
     </section>

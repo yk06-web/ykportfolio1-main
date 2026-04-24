@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const TALLY_URL = "https://tally.so/placeholder";
+const TALLY_URL = "https://tally.so/r/q4E799";
 
 const navLinks = [
   { to: "/work", label: "Work" },

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const TALLY_URL = "https://tally.so/placeholder";
+const TALLY_URL = "https://tally.so/r/q4E799";
 
 export function DarkCTA({
   heading = "Ready to build something that actually works for your business?",
