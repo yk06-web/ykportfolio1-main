@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Check } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { useDocumentHead } from "@/hooks/use-document-head";
@@ -91,6 +93,21 @@ export default function Services() {
     ogDescription: "Website builds, redesigns, and automation. Clear scope and honest pricing.",
   });
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      // Small timeout to ensure DOM has rendered
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 0);
+    }
+  }, [location]);
+
   return (
     <SiteLayout>
       {/* Header */}
@@ -108,7 +125,7 @@ export default function Services() {
       </section>
 
       {/* Main services */}
-      <section>
+      <section id="options">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
           <div className="grid gap-6 md:grid-cols-3">
             {mainServices.map((s, index) => (

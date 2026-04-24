@@ -209,7 +209,7 @@ export default function Index() {
 
           <div className="mt-14 text-center">
             <Link
-              to="/services"
+              to="/services#options"
               className="text-sm font-medium underline-offset-4 hover:underline"
               style={{ color: "#C9A87C" }}
             >
