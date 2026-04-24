@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import Work from "./pages/Work";
 import Services from "./pages/Services";
@@ -31,14 +32,17 @@ function NotFound() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/work" element={<Work />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/thank-you" element={<ThankYou />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Analytics />
+    </>
   );
 }
