@@ -176,6 +176,9 @@ export default function Services() {
           <p className="mt-12 mx-auto max-w-4xl text-center text-sm leading-relaxed text-muted-foreground">
             <span style={{ color: "#C9A87C" }}>Note:</span> Your site does not stop being our responsibility on launch day. Every project includes a care plan covering hosting, maintenance, and monitoring, starting at $50/month for websites and $100/month for websites with automations. With a 3 month minimum, we have enough time together to make sure everything is truly working for your business and your customers.
           </p>
+          <p className="mt-4 mx-auto max-w-4xl text-center text-sm font-bold leading-relaxed text-muted-foreground">
+            Every client who purchases a service receives the first month free. A minimum 3-month commitment applies after.
+          </p>
         </div>
       </section>
 
