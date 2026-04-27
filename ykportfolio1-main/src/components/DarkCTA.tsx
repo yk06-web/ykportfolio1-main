@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ProjectForm } from "./ProjectForm";
 
+const TALLY_URL = "https://tally.so/r/q4E799";
+
 export function DarkCTA({
   heading = "Ready to build something that actually works for your business?",
   subtext = "Tell me a bit about what you’re looking to build. It takes about 2 minutes, and I’ll review your answers and get back to you with the next steps.",
@@ -48,23 +50,22 @@ export function DarkCTA({
             </p>
             
             <div className="mt-10 w-full flex justify-center">
-              {showForm ? (
-                <ProjectForm />
-              ) : (
-                <button
-                  onClick={() => setShowForm(true)}
-                  className="inline-flex h-[60px] items-center justify-center rounded-full px-12 text-[17px] font-semibold tracking-wide transition-all hover:scale-105 shadow-xl"
-                  style={{ 
-                    backgroundColor: "#C9A87C", 
-                    color: "#111111",
-                    boxShadow: "0 10px 25px -5px rgba(201, 168, 124, 0.15)"
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B89669")}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C9A87C")}
-                >
-                  Start a Project
-                </button>
-              )}
+              <a
+                href={TALLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-[60px] items-center justify-center rounded-full px-12 text-[17px] font-semibold tracking-wide transition-all hover:scale-105 shadow-xl"
+                style={{ 
+                  backgroundColor: "#C9A87C", 
+                  color: "#111111",
+                  boxShadow: "0 10px 25px -5px rgba(201, 168, 124, 0.15)",
+                  textDecoration: "none"
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B89669")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C9A87C")}
+              >
+                Start a Project
+              </a>
             </div>
 
             {children && (

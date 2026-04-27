@@ -33,10 +33,10 @@ export default function Contact() {
           <p className="mt-12 text-sm text-white/80 font-medium">
             Prefer email?{" "}
             <a
-              href="mailto:hello@ykdigitals.ca"
+              href="mailto:info@ykdigitals.ca"
               className="text-white underline-offset-4 hover:underline"
             >
-              hello@ykdigitals.ca
+              info@ykdigitals.ca
             </a>
           </p>
         </div>

@@ -39,11 +39,11 @@ export function Footer() {
         {/* Right: contact + socials */}
         <div className="flex flex-col items-start gap-4 md:items-end">
           <a
-            href="mailto:hello@ykdigitals.ca"
+            href="mailto:info@ykdigitals.ca"
             className="text-sm transition-colors hover:text-white"
             style={{ color: "#CCCCCC" }}
           >
-            hello@ykdigitals.ca
+            info@ykdigitals.ca
           </a>
           <div className="flex items-center gap-3">
             <a
