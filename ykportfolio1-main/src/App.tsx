@@ -29,16 +29,45 @@ function NotFound() {
   );
 }
 
+import { useState } from "react";
+
+function SentryDebugTrigger() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="fixed bottom-0 right-0 z-50 flex h-8 w-8 items-end justify-end p-2"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="absolute bottom-0 right-0 h-12 w-12 cursor-default" />
+      {isHovered && (
+        <button
+          onClick={() => {
+            throw new Error("Sentry Test Error");
+          }}
+          className="relative z-10 whitespace-nowrap rounded bg-red-600 px-3 py-1.5 text-xs font-bold text-white shadow-lg transition-all hover:bg-red-700"
+        >
+          DEBUG_SENTRY_TRIGGER
+        </button>
+      )}
+    </div>
+  );
+}
+
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/work" element={<Work />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/thank-you" element={<ThankYou />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      {import.meta.env.DEV && <SentryDebugTrigger />}
+    </>
   );
 }

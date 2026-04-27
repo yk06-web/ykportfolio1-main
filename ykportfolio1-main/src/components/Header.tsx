@@ -67,17 +67,15 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <a
-            href={TALLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
             className="inline-flex h-10 items-center justify-center rounded-md px-5 text-sm font-medium transition-colors"
             style={{ backgroundColor: "#C9A87C", color: "#111111" }}
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B89669")}
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C9A87C")}
           >
             Start a Project
-          </a>
+          </Link>
         </div>
 
         <button
@@ -104,16 +102,14 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={TALLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contact"
               className="mt-2 inline-flex h-10 items-center justify-center rounded-md text-sm font-medium"
               style={{ backgroundColor: "#C9A87C", color: "#111111" }}
               onClick={() => setOpen(false)}
             >
               Start a Project
-            </a>
+            </Link>
           </nav>
         </div>
       )}
