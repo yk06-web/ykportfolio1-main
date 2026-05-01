@@ -38,22 +38,22 @@ const projects: Project[] = [
   },
   {
     label: "Concept Demo, Coming Soon",
-    niche: "Healthcare",
-    name: "Chiropractic Clinic",
+    niche: "Home Services",
+    name: "Basement Development",
     description:
-      "Currently in development. A conversion-focused site for chiropractors built around appointment volume and local search visibility.",
+      "Custom basement builds designed for comfort, function, and added living space.",
     image:
-      "https://images.unsplash.com/photo-1612776572997-76cc42e058c3?w=1200&q=80&auto=format&fit=crop",
+      "/basement-development.png",
     comingSoon: true,
   },
   {
     label: "Lead Generation Demo, Coming Soon",
     niche: "Home Services",
-    name: "Roofing Lead Generation",
+    name: "Flooring Installation",
     description:
-      "A lead gen site built to rank locally and capture roofing inquiries. Leads are routed directly to a business client on a monthly rental model.",
+      "Clean, durable flooring solutions designed to elevate comfort and finish any space.",
     image:
-      "https://images.unsplash.com/photo-1632759145355-8b8f0dd5c84a?w=1200&q=80&auto=format&fit=crop",
+      "/enhanced-flooring.png",
     comingSoon: true,
   },
 ];
