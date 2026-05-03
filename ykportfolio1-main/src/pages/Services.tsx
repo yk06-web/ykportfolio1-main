@@ -49,37 +49,37 @@ const mainServices = [
 const automations = [
   {
     name: "Confirmation Emails",
-    price: "$100–$200",
+    price: "$125 CAD (one-time)",
     body: "Every inquiry instantly triggers a professional confirmation so leads never feel ignored.",
   },
   {
     name: "Automated Follow-ups",
-    price: "$150–$350",
+    price: "$250 CAD (one-time)",
     body: "Timed sequences that follow up with leads who have not responded so potential customers do not fall through the cracks.",
   },
   {
     name: "Full Appointment System",
-    price: "$250–$400",
+    price: "$250 CAD (one-time)",
     body: "An intelligent agent that handles scheduling conversations and books appointments without you being involved.",
   },
   {
     name: "24/7 Chat Agent",
-    price: "$400–$800",
+    price: "$500 CAD (one-time)",
     body: "An AI-powered chat agent on your website that answers questions, qualifies leads, and captures contact info around the clock.",
   },
   {
     name: "Website Maintenance + Hosting",
-    price: "$50–$80/month",
+    price: "$50 CAD/month",
     body: "Your site stays fast, secure, and up to date. Small edits included.",
   },
   {
     name: "Automation Monitoring",
-    price: "$60–$90/month",
+    price: "$60 CAD/month",
     body: "Your automations stay running, tested, and updated. If something breaks it gets fixed before you notice.",
   },
   {
     name: "Website + Automation Bundle",
-    price: "$100–$150/month",
+    price: "$100 CAD/month",
     body: "Complete maintenance and monitoring for both your website and your automation systems.",
   },
 ];
