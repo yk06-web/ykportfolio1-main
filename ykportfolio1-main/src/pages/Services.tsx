@@ -21,7 +21,7 @@ const mainServices = [
   },
   {
     name: "Website Redesign",
-    price: "from $400",
+    price: "from $600",
     body: "Your existing site rebuilt from the ground up. Better structure, better copy direction, better conversion, without starting your online presence from scratch.",
     items: [
       "Site structure and copy direction",

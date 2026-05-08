@@ -117,7 +117,7 @@ export default function Index() {
       <section className="border-y flex items-center justify-center" style={{ backgroundColor: "#F7F4EF", borderColor: "#E5E0D8" }}>
         <div className="w-full px-6 py-12 text-center">
           <a
-            href="https://trustpilot.com/placeholder"
+            href="https://www.trustpilot.com/evaluate/ykdigitals.ca"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-4 transition-opacity hover:opacity-80"

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Instagram } from "lucide-react";
 import { ProjectForm } from "./ProjectForm";
 
 const TALLY_URL = "https://tally.so/r/q4E799";
@@ -82,6 +83,15 @@ export function DarkCTA({
               <span className="text-sm text-white/50 mt-1">Websites and Automation for Small Businesses.</span>
             </div>
             <div className="flex items-center gap-8">
+              <a 
+                href="https://www.instagram.com/ykdigitals.ca/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors flex items-center justify-center"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
               <Link to="/about" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
                 About
               </Link>

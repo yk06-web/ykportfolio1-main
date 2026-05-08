@@ -1,4 +1,7 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Header } from "./components/Header";
 import Index from "./pages/Index";
 import Work from "./pages/Work";
 import Services from "./pages/Services";
@@ -29,8 +32,6 @@ function NotFound() {
   );
 }
 
-import { useState } from "react";
-
 function SentryDebugTrigger() {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -56,18 +57,43 @@ function SentryDebugTrigger() {
 }
 
 export default function App() {
+  const location = useLocation();
+
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/thank-you" element={<ThankYou />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+    <div className="flex min-h-screen flex-col bg-background">
+      <Header />
+      <AnimatePresence 
+        mode="wait" 
+        onExitComplete={() => {
+          // Disable smooth scroll temporarily so route changes jump instantly to top
+          document.documentElement.style.scrollBehavior = 'auto';
+          window.scrollTo(0, 0);
+          // Restore smooth scroll for anchor links
+          setTimeout(() => {
+            document.documentElement.style.scrollBehavior = 'smooth';
+          }, 0);
+        }}
+      >
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="flex flex-1 flex-col"
+        >
+          <Routes location={location}>
+            <Route path="/" element={<Index />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </motion.div>
+      </AnimatePresence>
       {import.meta.env.DEV && <SentryDebugTrigger />}
-    </>
+    </div>
   );
 }
