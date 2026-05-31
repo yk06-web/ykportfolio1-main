@@ -31,19 +31,29 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${headerBg}`}
+      className={`fixed top-0 z-50 w-full flex flex-col transition-colors duration-300 ${headerBg}`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <div 
+        className="relative overflow-hidden py-2 text-center text-sm font-bold text-[#111111]"
+        style={{ animation: "breathe-bg 4s ease-in-out infinite" }}
+      >
+        <div className="relative z-10 tracking-wide">50% Off All Services — This Month Only</div>
+        <div
+          className="absolute inset-0 z-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
+          style={{ animation: "shimmer 3s infinite ease-in-out" }}
+        />
+      </div>
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
         <Link
           to="/"
-          className={`font-serif text-xl tracking-tight ${textColor}`}
+          className={`shrink-0 font-serif text-xl tracking-tight ${textColor}`}
           onClick={() => setOpen(false)}
         >
           YK Digital<span style={{ color: "#C9A87C" }}>s</span>
         </Link>
 
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-4 lg:gap-8 md:flex">
           {navLinks.map((link) => {
             const active = pathname === link.to;
             return (
@@ -66,7 +76,7 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden shrink-0 md:block">
           <a
             href={TALLY_URL}
             target="_blank"

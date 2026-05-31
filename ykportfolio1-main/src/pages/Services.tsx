@@ -9,7 +9,8 @@ const TALLY_URL = "https://tally.so/r/q4E799";
 const mainServices = [
   {
     name: "Website Build",
-    price: "from $500",
+    originalPrice: "from $500",
+    newPrice: "from $250",
     body: "A site built around your business goals, your customers, and one clear outcome. Not a template, something that actually represents what you do.",
     items: [
       "Custom design",
@@ -21,7 +22,8 @@ const mainServices = [
   },
   {
     name: "Website Redesign",
-    price: "from $600",
+    originalPrice: "from $600",
+    newPrice: "from $300",
     body: "Your existing site rebuilt from the ground up. Better structure, better copy direction, better conversion, without starting your online presence from scratch.",
     items: [
       "Site structure and copy direction",
@@ -34,7 +36,8 @@ const mainServices = [
   },
   {
     name: "Website + Automation",
-    price: "from $900",
+    originalPrice: "from $900",
+    newPrice: "from $450",
     body: "A complete package. A site that brings people in and a system that follows up, confirms, and nurtures them automatically.",
     items: [
       "Everything in Website Build",
@@ -49,37 +52,41 @@ const mainServices = [
 const automations = [
   {
     name: "Confirmation Emails",
-    price: "$125 CAD (one-time)",
+    originalPrice: "$125",
+    newPrice: "$63",
     body: "Every inquiry instantly triggers a professional confirmation so leads never feel ignored.",
   },
   {
     name: "Automated Follow-ups",
-    price: "$250 CAD (one-time)",
+    originalPrice: "$250",
+    newPrice: "$125",
     body: "Timed sequences that follow up with leads who have not responded so potential customers do not fall through the cracks.",
   },
   {
     name: "Full Appointment System",
-    price: "$250 CAD (one-time)",
+    originalPrice: "$250",
+    newPrice: "$125",
     body: "An intelligent agent that handles scheduling conversations and books appointments without you being involved.",
   },
   {
     name: "24/7 Chat Agent",
-    price: "$500 CAD (one-time)",
+    originalPrice: "$500",
+    newPrice: "$250",
     body: "An AI-powered chat agent on your website that answers questions, qualifies leads, and captures contact info around the clock.",
   },
   {
     name: "Website Maintenance + Hosting",
-    price: "$50 CAD/month",
+    price: "$50/month",
     body: "Your site stays fast, secure, and up to date. Small edits included.",
   },
   {
     name: "Automation Monitoring",
-    price: "$60 CAD/month",
+    price: "$60/month",
     body: "Your automations stay running, tested, and updated. If something breaks it gets fixed before you notice.",
   },
   {
     name: "Website + Automation Bundle",
-    price: "$100 CAD/month",
+    price: "$100/month",
     body: "Complete maintenance and monitoring for both your website and your automation systems.",
   },
 ];
@@ -140,9 +147,14 @@ export default function Services() {
                 }}
               >
                 <h2 className="font-serif text-2xl text-foreground">{s.name}</h2>
-                <p className="mt-2 text-base font-medium" style={{ color: "#C9A87C" }}>
-                  {s.price}
-                </p>
+                <div className="mt-2 flex items-baseline gap-2">
+                  <span className="text-base text-gray-400 line-through">
+                    {s.originalPrice}
+                  </span>
+                  <span className="text-xl font-bold" style={{ color: "#C9A87C" }}>
+                    {s.newPrice}
+                  </span>
+                </div>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
 
                 <ul className="mt-6 space-y-3">
@@ -173,12 +185,20 @@ export default function Services() {
             ))}
           </div>
 
-          <p className="mt-12 mx-auto max-w-4xl text-center text-sm leading-relaxed text-muted-foreground">
-            <span style={{ color: "#C9A87C" }}>Note:</span> Your site does not stop being our responsibility on launch day. Every project includes a care plan covering hosting, maintenance, and monitoring, starting at $50/month for websites and $100/month for websites with automations. With a 3 month minimum, we have enough time together to make sure everything is truly working for your business and your customers.
-          </p>
-          <p className="mt-4 mx-auto max-w-4xl text-center text-sm font-bold leading-relaxed text-muted-foreground">
-            Every client who purchases a service receives the first month free. A minimum 3-month commitment applies after.
-          </p>
+          <div className="mx-auto mt-16 max-w-3xl space-y-5 rounded-xl border border-border/50 bg-card/50 p-6 sm:p-8">
+            <div className="flex items-start gap-4">
+              <Check className="mt-0.5 h-5 w-5 shrink-0" style={{ color: "#C9A87C" }} />
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                <strong className="font-medium text-foreground">First month free with every project.</strong> After that a simple 3 month minimum commitment keeps everything running at $50/month for websites or $100/month for websites with automations.
+              </p>
+            </div>
+            <div className="flex items-start gap-4">
+              <Check className="mt-0.5 h-5 w-5 shrink-0" style={{ color: "#C9A87C" }} />
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                <strong className="font-medium text-foreground">Early client bonus.</strong> First few clients get a free confirmation email automation included.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -207,10 +227,21 @@ export default function Services() {
                 <div className="md:col-span-4">
                   <p className="text-sm leading-relaxed text-muted-foreground">{a.body}</p>
                 </div>
-                <div className="md:col-span-3 md:text-right">
-                  <p className="text-sm font-medium" style={{ color: "#C9A87C" }}>
-                    {a.price}
-                  </p>
+                <div className="md:col-span-3 md:text-right flex items-baseline justify-end gap-2">
+                  {a.originalPrice ? (
+                    <>
+                      <span className="text-sm text-gray-400 line-through">
+                        {a.originalPrice}
+                      </span>
+                      <span className="text-base font-bold" style={{ color: "#C9A87C" }}>
+                        {a.newPrice}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-sm font-medium" style={{ color: "#C9A87C" }}>
+                      {a.price}
+                    </span>
+                  )}
                 </div>
               </div>
             ))}

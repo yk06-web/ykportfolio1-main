@@ -140,6 +140,15 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes breathe-bg {
+  0%, 100% { background-color: #C9A87C; }
+  50% { background-color: #B5956A; }
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
 .yk-rise { animation: yk-rise 0.8s ease-out both; }
 .yk-rise-1 { animation: yk-rise 0.8s ease-out 0.1s both; }
 .yk-rise-2 { animation: yk-rise 0.8s ease-out 0.4s both; }
